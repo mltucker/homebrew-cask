@@ -9,8 +9,9 @@ cask "marvin" do
   homepage "https://www.amazingmarvin.com/"
 
   livecheck do
-    url "http://amazingmarvin.s3-website-us-east-1.amazonaws.com/Marvin.dmg"
-    strategy :header_match
+    url "https://amazingmarvin.s3.amazonaws.com/latest-mac.yml"
+    strategy :page_match
+    regex(%r{Marvin-(\d+\.\d+\.\d+)\.dmg}i)
   end
 
   app "Marvin.app"
